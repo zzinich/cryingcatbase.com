@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+	<script src="chrome-extension://jnlgamecbpmbajjfhmmmlhejkemejdma/static/js/inpage.js"></script>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link href="https://fonts.cdnfonts.com/css/charanga" rel="stylesheet" />
+		<link rel="shortcut icon" href="./3.png" type="image/x-icon" />
+		<title>Crying Cat</title>
+		<style>
+			body {
+				background: url(./img/crycat.gif);
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-position: 50%;
+				height: 100vh;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				font-family: 'charanga', sans-serif;
+				overflow: hidden !important;
+			}
+			.flier {
+				pointer-events: none;
+			}
+
+			.flier > * {
+				/* Adjust animation duration to change the element’s speed */
+				animation: fly 90s linear infinite;
+				pointer-events: none !important;
+				top: 0;
+				left: 0;
+				transform: translateX(-120%) translateY(-120%) rotateZ(0);
+				position: fixed;
+				animation-delay: 1s;
+				z-index: 999999;
+			}
+			.flierr > * {
+				/* Adjust animation duration to change the element’s speed */
+				animation: fly 30s linear infinite;
+				pointer-events: none !important;
+				top: 0;
+				left: 0;
+				transform: translateX(-120%) translateY(-120%) rotateZ(0);
+				position: fixed;
+				animation-delay: 4s;
+				z-index: 999999;
+			}
+			.flierrr > * {
+				/* Adjust animation duration to change the element’s speed */
+				animation: fly 50s linear infinite;
+				pointer-events: none !important;
+				top: 0;
+				left: 0;
+				transform: translateX(-10%) translateY(-120%) rotateZ(0);
+				position: fixed;
+				animation-delay: 6s;
+				z-index: 999999;
+			}
+			.flierrrr > * {
+				/* Adjust animation duration to change the element’s speed */
+				animation: fly 60s linear infinite;
+				pointer-events: none !important;
+				top: 0;
+				left: 0;
+				width: 300px;
+				height: 300px;
+				transform: translateX(-120%) translateY(-120%) rotateZ(0);
+				position: fixed;
+				animation-delay: 1s;
+				z-index: 999999;
+			}
+			.iflier > * {
+				/* Adjust animation duration to change the element’s speed */
+				animation: fly 50s linear infinite;
+				pointer-events: none !important;
+				top: 0;
+				left: 0;
+				transform: translateX(-120%) translateY(-120%) rotateZ(0);
+				position: fixed;
+				animation-delay: 4s;
+				z-index: 999999;
+			}
+			.iflierr > * {
+				/* Adjust animation duration to change the element’s speed */
+				animation: fly 20s linear infinite;
+				pointer-events: none !important;
+				top: 0;
+				left: 0;
+				transform: translateX(-120%) translateY(-120%) rotateZ(0);
+				position: fixed;
+				animation-delay: 7s;
+				z-index: 999999;
+			}
+			.iflierrr > * {
+				/* Adjust animation duration to change the element’s speed */
+				animation: fly 30s linear infinite;
+				pointer-events: none !important;
+				top: 0;
+				left: 0;
+				transform: translateX(-120%) translateY(-120%) rotateZ(0);
+				position: fixed;
+				animation-delay: 6s;
+				z-index: 999999;
+			}
+			.iflierrrr > * {
+				/* Adjust animation duration to change the element’s speed */
+				animation: fly 80s linear infinite;
+				pointer-events: none !important;
+				top: 0;
+				left: 0;
+				width: 300px;
+				height: 300px;
+				transform: translateX(-120%) translateY(-120%) rotateZ(0);
+				position: fixed;
+				animation-delay: 10s;
+				z-index: 999999;
+			}
+			.lflier > * {
+				/* Adjust animation duration to change the element’s speed */
+				animation: fly 14s linear infinite;
+				pointer-events: none !important;
+				top: 0;
+				left: 0;
+				transform: translateX(-120%) translateY(-120%) rotateZ(0);
+				position: fixed;
+				animation-delay: 5s;
+				z-index: 999999;
+			}
+			.lflierr > * {
+				/* Adjust animation duration to change the element’s speed */
+				animation: fly 13s linear infinite;
+				pointer-events: none !important;
+				top: 0;
+				left: 0;
+				transform: translateX(-120%) translateY(-120%) rotateZ(0);
+				position: fixed;
+				animation-delay: 13s;
+				z-index: 999999;
+			}
+			.lflierrr > * {
+				/* Adjust animation duration to change the element’s speed */
+				animation: fly 10s linear infinite;
+				pointer-events: none !important;
+				top: 0;
+				left: 0;
+				transform: translateX(-10%) translateY(-120%) rotateZ(0);
+				position: fixed;
+				animation-delay: 16s;
+				z-index: 999999;
+			}
+			.lflierrrr > * {
+				/* Adjust animation duration to change the element’s speed */
+				animation: fly 10s linear infinite;
+				pointer-events: none !important;
+				top: 0;
+				left: 0;
+				width: 300px;
+				height: 300px;
+				transform: translateX(-120%) translateY(-120%) rotateZ(0);
+				position: fixed;
+				animation-delay: 14s;
+				z-index: 999999;
+			}
+			.liflier > * {
+				/* Adjust animation duration to change the element’s speed */
+				animation: fly 90s linear infinite;
+				pointer-events: none !important;
+				top: 0;
+				left: 0;
+				transform: translateX(-120%) translateY(-120%) rotateZ(0);
+				position: fixed;
+				animation-delay: 13s;
+				z-index: 999999;
+			}
+			.liflierr > * {
+				/* Adjust animation duration to change the element’s speed */
+				animation: fly 30s linear infinite;
+				pointer-events: none !important;
+				top: 0;
+				left: 0;
+				transform: translateX(-120%) translateY(-120%) rotateZ(0);
+				position: fixed;
+				animation-delay: 12s;
+				z-index: 999999;
+			}
+			.liflierrr > * {
+				/* Adjust animation duration to change the element’s speed */
+				animation: fly 7s linear infinite;
+				pointer-events: none !important;
+				top: 0;
+				left: 0;
+				transform: translateX(-120%) translateY(-120%) rotateZ(0);
+				position: fixed;
+				animation-delay: 10s;
+				z-index: 999999;
+			}
+			.liflierrrr > * {
+				/* Adjust animation duration to change the element’s speed */
+				animation: fly 80s linear infinite;
+				pointer-events: none !important;
+				top: 0;
+				left: 0;
+				width: 300px;
+				height: 300px;
+				transform: translateX(-120%) translateY(-120%) rotateZ(0);
+				position: fixed;
+				animation-delay: 10s;
+				z-index: 999999;
+			}
+
+			/* Keyframe values control where the element will begin
+    and end its trajectory across the screen. Each rule
+    represents a path the element follows across the screen. */
+
+			@keyframes fly {
+				98.001%,
+				0% {
+					display: block;
+					transform: translateX(-200%) translateY(100vh) rotateZ(0deg);
+				}
+
+				15% {
+					transform: translateX(100vw) translateY(-100%) rotateZ(180deg);
+				}
+
+				15.001%,
+				18% {
+					transform: translateX(100vw) translateY(-30%) rotateZ(0deg);
+				}
+
+				40% {
+					transform: translateX(-200%) translateY(3vh) rotateZ(-180deg);
+				}
+
+				40.001%,
+				43% {
+					transform: translateX(-200%) translateY(-100%) rotateZ(-180deg);
+				}
+
+				65% {
+					transform: translateX(100vw) translateY(50vh) rotateZ(0deg);
+				}
+
+				65.001%,
+				68% {
+					transform: translateX(20vw) translateY(-200%) rotateZ(180deg);
+				}
+
+				95% {
+					transform: translateX(10vw) translateY(100vh) rotateZ(0deg);
+				}
+			}
+			.kalia {
+				height: 30%;
+				width: auto;
+			}
+			.socials {
+				height: 100px;
+				width: auto;
+				margin: 50px;
+				z-index: 9999999999999999999999999;
+			}
+			.socrap {
+				display: flex;
+				width: 50vw;
+				margin: auto;
+				align-items: end;
+				justify-content: space-around;
+				flex-direction: row;
+				padding-bottom: 4rem;
+				z-index: 9999999999999999999999999;
+				height: 50vh;
+			}
+			.title {
+				width: 100vw;
+				height: 30vh;
+				text-align: center;
+				position: relative;
+				align-items: end;
+				padding-top: 10vh;
+				justify-content: center;
+				font-size: 60px;
+				letter-spacing: 3px;
+			}
+		</style>
+		<style>
+			@keyframes shake {
+				0% {
+					transform: translate(0, 0);
+				}
+				10% {
+					transform: translate(-1px, 1px) rotate(-1deg);
+				}
+				20% {
+					transform: translate(1px, -1px) rotate(1deg);
+				}
+				30% {
+					transform: translate(-2px, 2px) rotate(-2deg);
+				}
+				40% {
+					transform: translate(2px, -2px) rotate(2deg);
+				}
+				50% {
+					transform: translate(-2px, -1px) rotate(-1deg);
+				}
+				60% {
+					transform: translate(2px, 1px) rotate(1deg);
+				}
+				70% {
+					transform: translate(-1px, -2px) rotate(-2deg);
+				}
+				80% {
+					transform: translate(1px, 2px) rotate(2deg);
+				}
+				90% {
+					transform: translate(0, 0);
+				}
+				100% {
+					transform: translate(0, 0);
+				}
+			}
+			.bodzy {
+				animation: shake 4s infinite, flash 1s infinite alternate !important;
+				max-width: 100vw !important;
+			}
+			.bodeh {
+				animation: shake 7s infinite, flash 1s infinite alternate !important;
+				max-width: 100vw !important;
+			}
+			.bod {
+				animation: shake 1ms infinite, flash 1s infinite alternate !important;
+				max-width: 100vw !important;
+			}
+			.logo {
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 300px;
+				width: auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="flier"><img class="kalia" src="/img/cry.png" alt="" /></div>
+		<div class="flierr"><img class="kalia" src="./img/haha.jpg" alt="" /></div>
+		<div class="flierrr">
+			<img class="kalia" src="./img/pngegg.png" alt="" />
+		</div>
+		<div class="flierrrr"><img class="kalia" src="./img/wui.gif" alt="" /></div>
+		<div class="iflier"><img class="kalia" src="./img/1.png" alt="" /></div>
+		<div class="iflierr"><img class="kalia" src="./img/2.png" alt="" /></div>
+		<div class="iflierrr"><img class="kalia" src="./img/3.png" alt="" /></div>
+		<div class="iflierrrr"><img class="kalia" src="./img/4.png" alt="" /></div>
+		<div class="lflier"><img class="kalia" src="./img/cry.png" alt="" /></div>
+		<div class="lflierr"><img class="kalia" src="./img/haha.jpg" alt="" /></div>
+		<div class="lflierrr">
+			<img class="kalia" src="./img/pngegg.png" alt="" />
+		</div>
+		<div class="lflierrrr">
+			<img class="kalia" src="./img/wui.gif" alt="" />
+		</div>
+		<div class="liflier"><img class="kalia" src="./img/1.png" alt="" /></div>
+		<div class="liflierr"><img class="kalia" src="./img/2.png" alt="" /></div>
+		<div class="liflierrr"><img class="kalia" src="./img/3.png" alt="" /></div>
+		<div class="liflierrrr"><img class="kalia" src="./img/4.png" alt="" /></div>
+		<img class="logo bod" src="./img/cry.png" alt="" />
+		<section class="bodzy">
+			<div class="title bodeh">
+				<h1>CRYING CAT</h1>
+			</div>
+
+			<div class="socrap bodeh">
+				<a href="https://t.me/cryingcatbase"
+					><img class="socials bodzy" src="./img/tg.png" alt=""
+				/></a>
+				<a href="https://x.com/cryingcat_base"
+					><img class="socials bodzy" src="./img/x.png" alt=""
+				/></a>
+			</div>
+		</section>
+	</body>
+</html>
